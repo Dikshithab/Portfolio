@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Contact Section — Futuristic 3D Card
+   ========================================================================== */
+
+.contact-section {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card-outer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-card-wrapper {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 60px 48px;
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.contact-card-wrapper:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(139, 92, 246, 0.15);
+}
+
+/* Ambient Glow Orb Inside Contact Card */
+.contact-glow-orb {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.contact-title {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  letter-spacing: -1.2px;
+  line-height: 1.15;
+  margin: 16px 0 18px;
+}
+
+.contact-title span {
+  color: transparent;
+  background: linear-gradient(120deg, var(--accent-primary-light), var(--accent-cyan-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.contact-description {
+  max-width: 620px;
+  margin: 0 auto 36px;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* CTA Row */
+.contact-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn-contact-primary,
+.btn-contact-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 26px;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.btn-contact-primary {
+  background: linear-gradient(135deg, var(--accent-primary-light), var(--accent-cyan-light));
+  color: #0b0c10;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 22px rgba(139, 92, 246, 0.32);
+}
+
+.btn-contact-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.45);
+}
+
+.btn-contact-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-contact-secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+/* Divider */
+.contact-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+  margin-bottom: 36px;
+}
+
+/* Direct Channels Grid */
+.contact-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+
+.channel-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-normal);
+}
+
+.channel-card:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.channel-icon-box {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  color: var(--accent-primary-light);
+  transition: all var(--transition-fast);
+}
+
+.channel-card:hover .channel-icon-box {
+  background: rgba(139, 92, 246, 0.24);
+  color: #ffffff;
+}
+
+.channel-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.channel-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.channel-title-row h4 {
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.channel-arrow {
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.channel-card:hover .channel-arrow {
+  color: var(--accent-primary-light);
+  transform: translate(2px, -2px);
+}
+
+.channel-handle {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--accent-cyan-light);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  margin-bottom: 6px;
+}
+
+.channel-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Contact Breakpoints
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .contact-card-wrapper {
+    padding: 38px 24px;
+  }
+
+  .contact-channels-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-contact-primary,
+  .btn-contact-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card-wrapper {
+    padding: 30px 18px;
+  }
+
+  .contact-title {
+    font-size: 1.95rem;
+  }
+}

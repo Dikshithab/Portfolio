@@ -1,0 +1,504 @@
+/* =========================================
+   ABOUT SECTION — PREMIUM 3D GLASS DESIGN
+========================================= */
+
+.about-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+/* Background ambient glow */
+.about-section::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: 15%;
+  left: -180px;
+  background: var(--accent-primary-glow);
+  filter: blur(100px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about-section::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  bottom: 5%;
+  right: -150px;
+  background: var(--accent-cyan-surface);
+  filter: blur(100px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Main layout */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* =========================================
+   BIO CARD
+========================================= */
+
+.about-bio-card-wrapper {
+  height: 100%;
+  perspective: 1200px;
+}
+
+.about-bio-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 36px;
+
+  background: var(--bg-card);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+
+  overflow: hidden;
+}
+
+/* Subtle glass reflection */
+.about-bio-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(167, 139, 250, 0.09),
+    transparent 40%,
+    rgba(34, 211, 238, 0.06)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.about-bio-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.about-bio-card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================
+   BIO HEADER
+========================================= */
+
+.bio-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.bio-avatar-badge {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-cyan)
+  );
+
+  border: 1px solid var(--border-accent);
+  border-radius: 18px;
+
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+
+  box-shadow: 0 8px 25px var(--accent-primary-glow);
+
+  transition: transform 0.4s ease;
+}
+
+.about-bio-card:hover .bio-avatar-badge {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.bio-header h3 {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.bio-subtitle {
+  font-size: 0.84rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* =========================================
+   BIO TEXT
+========================================= */
+
+.bio-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.bio-text p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   EDUCATION CARD
+========================================= */
+
+.education-banner {
+  position: relative;
+  z-index: 1;
+
+  margin-top: auto;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  padding: 23px;
+
+  background: var(--accent-primary-surface);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-subtle);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.education-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.education-icon-box {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+
+  color: var(--accent-primary);
+  box-shadow: var(--shadow-subtle);
+}
+
+.education-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.education-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.education-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-primary);
+}
+
+.education-cgpa {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 11px;
+
+  border-radius: var(--radius-full);
+  background: var(--accent-cyan-surface);
+  border: 1px solid var(--border-cyan);
+
+  color: var(--accent-cyan);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.education-info h4 {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.education-college {
+  font-size: 0.87rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.education-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.meta-separator {
+  color: var(--border-light);
+}
+
+/* =========================================
+   RIGHT SIDE — FOCUS PILLARS
+========================================= */
+
+.about-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.about-pillars > div {
+  flex: 1;
+  display: flex;
+  perspective: 1000px;
+}
+
+.pillar-card {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  width: 100%;
+  min-height: 150px;
+
+  padding: 25px;
+
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-card);
+
+  overflow: hidden;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Decorative gradient */
+.pillar-card::before {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  top: -85px;
+  right: -65px;
+
+  background: var(--accent-primary-glow);
+  filter: blur(45px);
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.pillar-card:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.pillar-card:hover::before {
+  opacity: 1;
+}
+
+/* Pillar icon */
+.pillar-icon {
+  position: relative;
+  z-index: 1;
+
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 15px;
+
+  background: var(--accent-primary-surface);
+  border: 1px solid var(--border-accent);
+
+  color: var(--accent-primary);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+  transform: translateY(-4px) rotate(-8deg);
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 8px 22px var(--accent-primary-glow);
+}
+
+/* Pillar content */
+.pillar-content {
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-content h4 {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 9px;
+}
+
+.pillar-content p {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 960px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-pillars {
+    gap: 18px;
+  }
+
+  .pillar-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .about-bio-card {
+    padding: 24px 20px;
+  }
+
+  .bio-header h3 {
+    font-size: 1.15rem;
+  }
+
+  .bio-text p {
+    font-size: 0.9rem;
+  }
+
+  .education-banner {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .education-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .education-info h4 {
+    font-size: 0.92rem;
+  }
+
+  .education-meta {
+    font-size: 0.73rem;
+  }
+
+  .pillar-card {
+    padding: 20px 17px;
+    gap: 14px;
+  }
+
+  .pillar-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .pillar-content h4 {
+    font-size: 0.98rem;
+  }
+
+  .pillar-content p {
+    font-size: 0.84rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .about-bio-card,
+  .bio-avatar-badge,
+  .education-banner,
+  .pillar-card,
+  .pillar-icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Application Shell Layout
+   ========================================================================== */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--bg-primary);
+}
+
+main {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Shared Spacing */
+section {
+  position: relative;
+  width: 100%;
+  padding: 110px 8%;
+  scroll-margin-top: 85px;
+}
+
+/* Max Content Width Wrapper */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+/* Tablet & Mobile Adjustments */
+@media (max-width: 992px) {
+  section {
+    padding: 90px 6%;
+  }
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 75px 5%;
+    scroll-margin-top: 75px;
+  }
+}

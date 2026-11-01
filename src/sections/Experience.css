@@ -1,0 +1,329 @@
+/* ==========================================================================
+   Experience & Certifications Section — Futuristic Timeline
+   ========================================================================== */
+
+.experience-section {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.experience-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Column Header */
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.column-icon-box {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  color: var(--accent-primary-light);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.column-header h3 {
+  font-size: 1.28rem;
+  letter-spacing: -0.3px;
+}
+
+/* Timeline Layout */
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 28px;
+  margin-bottom: 24px;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-cyan) 80%, transparent 100%);
+  border-radius: var(--radius-full);
+}
+
+.timeline-item-card {
+  position: relative;
+  padding: 24px;
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-normal);
+}
+
+.timeline-item-card:hover {
+  border-color: var(--border-accent);
+  transform: translateX(4px);
+  background: var(--bg-card-hover);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.timeline-node {
+  position: absolute;
+  top: 26px;
+  left: -28px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent-primary-light);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+}
+
+.timeline-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.exp-type-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  color: var(--accent-primary-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.exp-type-badge.edu-type {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: rgba(34, 211, 238, 0.3);
+  color: var(--accent-cyan-light);
+}
+
+.exp-period-badge {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.exp-role-title {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.exp-org-name {
+  font-size: 0.88rem;
+  color: #c4b5fd;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.exp-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Timeline Education Card */
+.timeline-education-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.08);
+}
+
+.edu-icon-badge {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: rgba(139, 92, 246, 0.16);
+  color: var(--accent-primary-light);
+}
+
+.edu-details {
+  flex: 1;
+}
+
+.edu-specialization-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.edu-cgpa-pill {
+  padding: 3px 9px;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--accent-cyan-light);
+  font-weight: 600;
+  font-size: 0.72rem;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+}
+
+/* Certifications Grid */
+.certifications-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.cert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-normal);
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.cert-icon-box {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  color: var(--accent-primary-light);
+}
+
+.cert-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-issuer {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-cyan-light);
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.cert-title {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.cert-meta {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Continuous Learning Card */
+.continuous-learning-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: rgba(34, 211, 238, 0.04);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.08);
+}
+
+.learning-pulse-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.7);
+  margin-top: 6px;
+}
+
+.continuous-learning-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.continuous-learning-card p {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Experience Breakpoints
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .experience-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline-container {
+    padding-left: 20px;
+  }
+
+  .timeline-node {
+    left: -20px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-item-card {
+    padding: 18px;
+  }
+
+  .timeline-education-card {
+    padding: 18px;
+    flex-direction: column;
+  }
+
+  .cert-card {
+    padding: 16px;
+  }
+}

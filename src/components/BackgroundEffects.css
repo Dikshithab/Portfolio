@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Background Effects & Atmosphere — Light & Dark Adaptive
+   ========================================================================== */
+
+.background-effects {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+/* Cyber Grid using Dynamic CSS Variable */
+.cyber-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 80%);
+}
+
+/* Atmospheric Glowing Lights */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.16;
+}
+
+.glow-top-left {
+  width: 600px;
+  height: 600px;
+  top: -150px;
+  left: -200px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+}
+
+.glow-top-right {
+  width: 550px;
+  height: 550px;
+  top: 100px;
+  right: -200px;
+  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+}
+
+.glow-bottom-center {
+  width: 700px;
+  height: 700px;
+  bottom: -250px;
+  left: calc(50% - 350px);
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  opacity: 0.1;
+}
+
+/* Canvas for Particles */
+.particles-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .ambient-glow {
+    filter: blur(90px);
+    opacity: 0.12;
+  }
+}
